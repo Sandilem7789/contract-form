@@ -1,15 +1,17 @@
 import firebase from "firebase";
 
+console.log(process.env.REACT_APP_STORAGE_BUCKET);
+
 // Initialize Firebase
 var firebaseApp = firebase.initializeApp({
      // Your web app's Firebase configuration
-    apiKey: "AIzaSyAgfrueg7RwTi7DRgdwW6Parw2tXoHFYhE",
-    authDomain: "contract-app-form.firebaseapp.com",
-    databaseURL: "https://contract-app-form.fireaseio.com",
-    projectId: "contract-app-form",
-    storageBucket: "contract-app-form.appspot.com",
-    messagingSenderId: "645546749531",
-    appId: "1:645546749531:web:da69d4d6b9c1dd5a5e197e"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
 })
 
 var db = firebase.firestore();
